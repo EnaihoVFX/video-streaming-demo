@@ -1,0 +1,24 @@
+{
+    "output_dir": "output",
+    "download_dir": "downloads",
+    "scan_interval_minutes": 60,
+    "min_clip_length": 8,
+    "max_clip_length": 45,
+    "max_video_length": 600,
+    "prompts": [
+        "most exciting moment",
+        "funniest part",
+        "emotional highlight",
+        "controversial statement"
+    ],
+    "gameplay_footage": [
+        "path/to/gameplay1.mp4",
+        "path/to/gameplay2.mp4"
+    ],
+    "layout_rules": {
+        "tutorial": "side_by_side",
+        "review": "picture_in_picture",
+        "gaming": "fullscreen",
+        "interview": "split_screen"
+    }
+}
