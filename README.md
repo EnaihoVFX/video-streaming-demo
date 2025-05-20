@@ -1,147 +1,166 @@
-AI Video Compression System
+# AI Video Compression System
 
-🔧 Setup Instructions
+---
 
-1. Activate the Virtual Environment
+## 🔧 Setup Instructions
 
+### 1. Activate the Virtual Environment
+
+```bash
 source tf_env/bin/activate
+```
 
-This activates the Python virtual environment necessary to run the AI compression scripts.
+This command activates the Python virtual environment necessary to run the AI compression scripts.
 
-2. Start Training the Model
+### 2. Start Training the Model
 
-Option A: Basic Training (Not Ideal)
+#### Option A: Basic Training *(Not Recommended)*
 
+```bash
 python3 ai_compression.py --input 1.mp4 --train
+```
 
-Uses 1.mp4 as the training video.
+* Uses `1.mp4` as the training video.
+* This is a minimal, low-quality clip and not ideal for effective training.
 
-This is a minimal clip and not ideal for training.
+#### Option B: High-Quality Recommended Training
 
-Option B: Recommended High-Quality Training
-
+```bash
 python3 ai_compression.py --input 2.mp4 --train
+```
 
-Uses 2.mp4, a high-quality 4K video of a 360° walk in the park.
+* Uses `2.mp4`, a 4K video of a 360° walk in the park.
+* Provides significantly better results and is recommended for serious training.
 
-Provides significantly better results and is recommended for serious training.
+---
 
-📈 Expanding Training Data
+## 📈 Expanding Training Data
 
-To further improve model performance:
+To further enhance model accuracy and generalization:
 
-Search for training clips on Google or YouTube.
+* Search for video clips on **YouTube** or **Google**.
+* Prioritize:
 
-Prioritize footage with 4K resolution or well-lit 1080p quality.
+  * **4K resolution** videos.
+  * **1080p** videos with **good lighting**.
+  * Anything visually high-quality to the human eye.
+* Target training with **20,000 – 40,000 frames**.
+* Allow training to run **until fully complete** for best performance.
 
-If the footage appears high quality to the human eye, it is likely suitable.
+---
 
-Aim for 20,000 to 40,000 frames of training data.
+## 🔄 Running the Model with Live Input
 
-Allow the training process to run until fully complete for best results.
-
-🔄 Running the Model for Live Input
-
+```bash
 python3 ai_compression.py --input webcam
+```
 
-Runs the model with live webcam input.
+* Initiates the model in real-time mode using webcam footage.
+* Useful for testing live AI decompression and vector-based interpretation.
 
-Useful for previewing real-time AI-based decompression and frame restoration.
+---
 
-🧠 How the System Works
+## 🧠 How the System Works
 
-The AI compresses each video frame into a very small image (approximately 4–6 KB).
+* Each video frame is compressed to a **4–6 KB image**.
+* Converted into **vector data**, understood by the AI model.
+* Decompressed back into a **1–20 MB high-resolution frame**.
+* This allows massive compression without losing semantic meaning.
 
-Converts this into vector data which represents the frame semantically.
+---
 
-Decompresses the frame back into a high-resolution version (1–20 MB), preserving or reconstructing image detail.
+## 🌍 Use Cases
 
-🌍 Use Cases
+* **Video Streaming**: Reduce bandwidth usage while maintaining quality.
+* **AI Editing Pipelines**: Enable precise, intelligent manipulation of video frames.
+* **Efficient AI Training Transfer**: Replace large datasets (e.g., 10 GB) with lightweight compressed files (\~10 KB), then expand client-side.
 
-Video Streaming: Reduces bandwidth requirements dramatically.
+---
 
-Intelligent Frame Editing: AI-understood frames can be directly manipulated by intelligent systems to produce highly accurate image edits.
+## 🚀 Future Development Plans
 
-Efficient Training Transfers: Compress full video datasets into ultra-light files (~10 KB) and expand back to full size client-side, replacing heavy 10 GB datasets.
+We are working to make the system more powerful, modular, and scalable:
 
-🚀 Future Development Plans
+### 🔬 Advanced Capabilities
 
-We are actively improving the AI model to become more advanced and modular:
+* **Detail Prediction**: AI will infer missing details with high accuracy.
+* **Enhanced Frame Generation**: Regenerated frames may surpass original quality.
 
-Detail Prediction: The model will infer and reconstruct missing or unclear details in frames, going beyond simple restoration.
+### 🧪 Adaptive Compression
 
-Improved Frame Generation: Rebuilt frames may exceed the quality of the originals through enhancement techniques.
+* Balances **compression ratio** and **client/server computation load**.
+* During heavy usage (e.g., livestreams), compression can be reduced to ease server stress.
+* **Ordering algorithms** will allocate server resources based on real-time demand.
 
-Adaptive Compression:
+---
 
-The AI will dynamically balance compression ratio vs. computational load.
+## 📹 Handling Pre-recorded Videos
 
-During high server load (e.g., livestreams), the model can reduce compression to ease server-side expansion.
+1. **Video Decomposition**:
 
-A priority-based ordering algorithm will allocate server resources to high-demand users first.
+   * Raw footage
+   * Edited versions
+   * Highlight clips
 
-📹 Handling Pre-recorded Videos
+2. **AI Processing**:
 
-Video files are broken down into:
+   * Transcripts with timestamps are generated.
+   * Non-relevant frames are discarded or heavily compressed.
 
-Raw footage
+3. **Recombination**:
 
-Edited versions
+   * Raw footage + Model data + Highlight/edit metadata.
+   * Final content is uploaded to the **blockchain platform**.
 
-Highlight clips
+---
 
-During upload:
+## 🌐 Web3 Integration & Vision
 
-The AI generates a transcript.
+### 🔗 Blockchain Foundations
 
-Timestamps of important moments are extracted.
+* Built for **Polkadot** and **Avalanche**.
+* Planned integration with **Ethereum**, **Solana**, and more.
 
-Non-essential frames are discarded or heavily compressed.
+### 📊 Creator Monetization via NFTs
 
-The system recombines:
+* Every video is minted as an **NFT**.
+* **Embedded ads** are paid for directly **on-chain**.
+* Ad revenue flows into the NFT's smart contract, creating a **real-time valuation mechanism**.
+* As views and ad interactions grow, the NFT's on-chain value increases.
+* This creates a **transparent, decentralized economic model**:
 
-Compressed raw footage
+  * Creators are paid instantly and proportionally.
+  * Investors can assess value based on **verifiable viewership** and **ad revenue performance**.
 
-Model data
+### 🧠 AI Agent Interoperability
 
-Highlight and editing metadata
+* An embedded **AI agent** bridges dApps across networks.
+* Manages **secure cross-chain communication**.
+* Facilitates seamless data sharing, streaming, and AI-based media control.
 
-The final, optimized video is uploaded to the blockchain platform.
+---
 
-🌐 Web3 Integration and Vision
+## 🔄 Reimagining Content Platforms
 
-This project aims to reimagine content creation, distribution, and monetization using AI and decentralized infrastructure.
+Our mission is to redefine how content is created, consumed, and monetized:
 
-Blockchain Integration: Built for Polkadot and Avalanche.
+* AI + Blockchain = **Maximum efficiency** in bandwidth, storage, and processing.
+* Creators are paid based on **true value**—not views alone, but engagement and ad interaction.
+* All content is **decentralized**, **compressible**, **verifiable**, and **interoperable**.
+* Users will:
 
-Planned Expansion: Ethereum, Solana, and other networks.
+  * Discover and interact with NFT-anchored videos.
+  * Use micro-ad revenue to support creators directly.
+  * Invest in creators by owning fractional shares of popular videos.
 
-Platform Features:
+### 🌐 Social Media Use Cases
 
-Cross-network interoperability for dApps.
+* **Decentralized Video Sharing**: Users upload, tokenize, and monetize content.
+* **Cross-Chain Interaction**: Videos live across multiple networks—Ethereum, Polkadot, Avalanche, Solana.
+* **Creator Autonomy**: Total ownership of content, earnings, and data.
+* **Community Engagement**: Fans and investors participate in content value growth.
+* **AI-Powered Discovery**: Smart recommendations and auto-highlights from compressed content.
 
-Content creator monetization:
+We’re building a future where content is lighter, smarter, decentralized, and creator-first.
 
-Uploads are tokenized as NFTs.
-
-Creators choose the network (Polkadot, Avalanche, Solana, Ethereum).
-
-Each creator's video is minted as an NFT and hosted on the network. Advertisements embedded within the video are paid for directly on-chain, with the payment routed into the associated NFT smart contract. This creates a direct, traceable link between ad revenue and the NFT's on-chain value. As the video receives more views and ad interactions, the NFT accrues real economic value, backed by verifiable ad payments. This system ensures that a video's popularity and monetization are transparently reflected in the NFT’s worth, enabling creators to earn in real time and investors to assess value based on actual viewer engagement and ad revenue performance.
-
-AI Agent Interoperability:
-
-An embedded AI agent communicates across dApps and networks.
-
-Facilitates secure and efficient data sharing and streaming between ecosystems.
-
-🔄 Reimagining Content Platforms
-
-Our end goal is to create a decentralized social media and content platform where:
-
-AI and blockchain fuse to optimize bandwidth, storage, and processing.
-
-Creators earn what their content is truly worth.
-
-Data flows freely and efficiently across networks.
-
-Content is smarter, lighter, and more interactive than ever before.
+---
